@@ -4,6 +4,7 @@ import { MapPin, Link as LinkIcon, Crosshair, MonitorSmartphone } from "lucide-r
 import { createLink } from "./actions";
 import Link from "next/link";
 
+export const dynamic = "force-dynamic";
 export default async function AdminPage() {
   const links = await prisma.link.findMany({
     include: {
