@@ -1,0 +1,34 @@
+generator client {
+  provider   = "prisma-client-js"
+  engineType = "library"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Link {
+  id          String   @id @default(uuid())
+  name        String
+  destination String?
+  path        String   @unique @default(uuid())
+  createdAt   DateTime @default(now())
+  visits      Visit[]
+}
+
+model Visit {
+  id        String   @id @default(uuid())
+  linkId    String
+  ip        String?
+  city      String?
+  region    String?
+  country   String?
+  latitude  Float?
+  longitude Float?
+  accuracy  Float?
+  userAgent String?
+  createdAt DateTime @default(now())
+
+  link      Link     @relation(fields: [linkId], references: [id])
+}
