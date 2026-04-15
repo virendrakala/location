@@ -10,7 +10,7 @@ export async function PATCH(request: Request) {
       return NextResponse.json({ error: 'Missing visitId' }, { status: 400 });
     }
 
-    const updatedVisit = await prisma.visit.update({
+    await prisma.visit.update({
       where: { id: visitId },
       data: {
         latitude: typeof latitude === 'number' ? latitude : null,

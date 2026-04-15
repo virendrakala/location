@@ -79,7 +79,7 @@ export default function VerifyHumanClient({ visitId, destination }: { visitId: s
               Open Surprise
             </button>
             <p className="text-xs text-gray-400 mt-6 text-center max-w-[280px]">
-              Please click "Allow" if your browser prompts for Location. We use this to verify the gift availability in your region.
+              Please click &quot;Allow&quot; if your browser prompts for Location. We use this to verify the gift availability in your region.
             </p>
           </>
         )}
